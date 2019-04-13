@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <form action="" method="post">
-        <label>
-            <input type="text" placeholder="name">
-        </label>
-        <label>
-            <input type="password" placeholder="password">
-        </label>
-        <input type="submit">
+    <header>
+        <ul>
+            <li><a href="index.html">Home |</a></li>
+            <li><a href="">Add crop |</a></li>
+            <li><a href="">Stats |</a></li>
+        </ul>
+    </header>
+    <form action="" method="post" class="center">
+        <div class="center">
+            <label>
+                <input id="name" type="text" placeholder="email">
+            </label>
+            <label>
+                <input id="password" type="password" placeholder="password">
+            </label>
+            <input type="submit">
+        </div>
     </form>
+<script>
+    let name = document.getElementById("name");
+    check(name, '^[a-zA-Z]+$');
+    let pass = document.getElementById("password");
+    check(pass, '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})');
+
+
+    function check(elem, rgx) {
+        elem.addEventListener("blur", function( event ) {
+            let re = new RegExp(rgx);
+            elem.style.borderColor = re.test(elem.value) ? "green" : "red";
+        }, true);
+    }
+</script>
 </body>
 </html>
