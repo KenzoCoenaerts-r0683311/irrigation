@@ -44,7 +44,7 @@ header ul li a:hover{
 }
 
 
-#grid-container{
+#grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -82,4 +82,33 @@ form {
     -webkit-box-shadow: -5px 10px 15px 3px #d0d0d0;
     border: 1px solid black;
 
+}
+
+#info-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: #272727;
+}
+
+#info-container ul {
+    padding-left: 60px;
+    list-style-type: none;
+}
+
+#info-container ul li {
+    padding-bottom: 15px;
+}
+
+#good {
+    color: green;
+}
+
+#bad {
+    color: red;
+}
+
+#between {
+    background: -webkit-linear-gradient(yellow, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
