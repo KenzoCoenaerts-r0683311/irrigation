@@ -1,3 +1,8 @@
+#wrapper {
+    height: 100%;
+    width: 100%;
+}
+
 footer, header {
     height: 50px;
     width: 100%;
@@ -78,7 +83,7 @@ input, select {
 
 form {
     width: 500px;
-    height: 450px;
+    height: 500px;
     -webkit-box-shadow: -5px 10px 15px 3px #d0d0d0;
     border: 1px solid black;
 
@@ -111,4 +116,9 @@ form {
     background: -webkit-linear-gradient(yellow, orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+input[type="submit"] {
+    color: #ffffff;
+    background: #1b8027;;
 }
