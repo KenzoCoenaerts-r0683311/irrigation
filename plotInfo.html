@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <style>
         #plot {
             width: 100%;
@@ -16,6 +15,7 @@
             text-align: center;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -27,44 +27,41 @@
         </ul>
     </header>
     <main>
+        <div class="grid-container">
+            <div>
+                <input type="checkbox" checked="checked">
+                <input type="checkbox" checked="checked">
+                <input type="checkbox" checked="checked">
+                <input type="checkbox" checked="checked">
+            </div>
+            <input type="text" placeholder="search crop/grid">
+        </div>
         <div id="plot">
             plotInfo
         </div>
-        <div id="grid-container">
-            <div>
-                <h2>info</h2>
-                <div id="info-container">
-                    <ul id="good">
-                        <li>good</li>
-                        <li>grid 1: strawberry</li>
-                        <li>grid 5: strawberry</li>
-                        <li>grid 8: strawberry</li>
-                        <li>grid 7: strawberry</li>
-                        <li>grid 6: strawberry</li>
-                        <li>grid 22: strawberry</li>
-                        <li>grid 11: strawberry</li>
-                    </ul>
-                    <ul id="between">
-                        <li>in between</li>
-                        <li>grid 12: strawberry</li>
-                        <li>grid 13: strawberry</li>
-                        <li>grid 28: strawberry</li>
-                        <li>grid 35: strawberry</li>
-                        <li>grid 48: strawberry</li>
-                        <li>grid 99: strawberry</li>
-                        <li>grid 26: strawberry</li>
-                    </ul>
-                    <ul id="bad">
-                        <li>bad</li>
-                        <li>grid 2: strawberry</li>
-                        <li>grid 3: strawberry</li>
-                        <li>grid 4: strawberry</li>
-                        <li>grid 16: strawberry</li>
-                        <li>grid 25: strawberry</li>
-                        <li>grid 18: strawberry</li>
-                        <li>grid 13: strawberry</li>
-                    </ul>
-                </div>
+        <div class="grid-container">
+            <div id="info-grid">
+                <ul class="good">
+                    <li><h3>good</h3></li>
+                    <li>test 1</li>
+                    <li>test 1</li>
+                    <li>test 1</li>
+                    <li>test 1</li>
+                </ul>
+                <ul class="between">
+                    <li><h3>in between</h3></li>
+                    <li>test 2</li>
+                    <li>test 2</li>
+                    <li>test 2</li>
+                    <li>test 2</li>
+                </ul>
+                <ul class="bad">
+                    <li><h3>bad</h3></li>
+                    <li>test 3 </li>
+                    <li>test 3 </li>
+                    <li>test 3 </li>
+                    <li>test 3 </li>
+                </ul>
             </div>
             <div if="stats">
                 <h2>stats</h2>
@@ -73,49 +70,49 @@
         </div>
     </main>
     <footer></footer>
-    <script>
-        let ctx = document.getElementById('myChart').getContext('2d');
-        bar(ctx);
-
-        function bar(dit) {
-            let myChart = new Chart(dit, {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        }
-    </script>
 </div>
+<script>
+    let ctx = document.getElementById('myChart').getContext('2d');
+    bar(ctx);
+
+    function bar(dit) {
+        let myChart = new Chart(dit, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>
